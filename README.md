@@ -57,7 +57,7 @@ Use the provider and model you configured through `hermes auth add`, `hermes log
 Before submitting, run:
 
 ```bash
-python3.14 scripts/verify_hermes.py
+python3 scripts/verify_hermes.py
 ```
 
 The script passes only when:
@@ -85,7 +85,7 @@ HERMES_IMMUNE_PROVIDER=custom HERMES_IMMUNE_MODEL=gemma4:e4b streamlit run app.p
 
 ```bash
 cd hermes-immune-system
-python3.14 -m pip install -r requirements.txt
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
@@ -156,3 +156,7 @@ Then show the Executive Pressure Test end to end with screenshots from the dashb
 ## Safety Note
 
 All inboxes, files, policies, datasets, credentials, and webpages in this repository are synthetic. Fake secrets are included only to test secret-handling behavior.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
