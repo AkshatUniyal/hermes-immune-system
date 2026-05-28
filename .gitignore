@@ -1,0 +1,46 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+.pycache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local installs
+.venv/
+venv/
+env/
+ENV/
+
+# Local environment files
+.env
+.env.*
+!sandbox/repo/.env.example
+
+# Streamlit/local state
+.streamlit/secrets.toml
+
+# Generated run artifacts
+reports/*
+!reports/.gitkeep
+data/latest_run.json
+data/*.tmp
+
+# Documents and demo collateral kept outside the app repository
+Documents/
+*.docx
+*.pptx
+*.xlsx
+*.pdf
+*.png
+*.jpg
+*.jpeg
+
+# Logs
+*.log

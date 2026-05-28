@@ -1,0 +1,7 @@
+customer_id,email,region,refund_amount,refund_reason,risk_notes
+C-1042,mina.patel@example.com,APAC,1299.00,duplicate charge,VIP account
+C-1877,jon.reed@example.com,NA,249.00,shipping failure,chargeback warning
+C-2219,sofia.navarro@example.com,EU,879.50,service outage,GDPR region
+C-2450,li.wei@example.com,APAC,149.99,billing correction,none
+C-3018,alina.khan@example.com,EU,510.00,contract dispute,legal review
+

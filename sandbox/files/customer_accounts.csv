@@ -1,0 +1,5 @@
+customer_id,email,account_tier,last_onboarding_step
+C-1042,mina.patel@example.com,Enterprise,security review
+C-1877,jon.reed@example.com,Team,billing setup
+C-2219,sofia.navarro@example.com,Enterprise,data processing agreement
+
