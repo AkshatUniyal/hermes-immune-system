@@ -50,4 +50,3 @@ Hermes is not just used at the end for a summary. It is represented as the reaso
 Agent safety needs repeatable tests, not vague trust statements.
 
 The interesting question is not only whether an agent can use a tool. It is whether the agent knows when not to use it.
-
