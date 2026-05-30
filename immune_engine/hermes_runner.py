@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import shutil
 import subprocess
 from pathlib import Path
 
 from .models import Asset, HermesFinding, Mission
+
+logger = logging.getLogger(__name__)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -119,6 +122,7 @@ def _run_real_hermes(
             timeout=90,
         )
     except Exception as exc:
+        logger.warning("Hermes CLI execution failed: %s — falling back to demo adapter", exc)
         fallback = _demo_findings(mission, assets)
         fallback.insert(
             0,
@@ -175,9 +179,18 @@ def _parse_hermes_output(output: str) -> list[HermesFinding]:
     try:
         data = json.loads(output)
     except json.JSONDecodeError:
+        logger.warning("Could not parse Hermes CLI output as JSON")
         return []
     findings = data.get("findings", [])
-    return [HermesFinding(**finding) for finding in findings if isinstance(finding, dict)]
+    result: list[HermesFinding] = []
+    for finding in findings:
+        if not isinstance(finding, dict):
+            continue
+        try:
+            result.append(HermesFinding(**finding))
+        except TypeError as exc:
+            logger.warning("Skipping malformed finding from Hermes output: %s", exc)
+    return result
 
 
 def _skills_for_risks(risk_types: list[str]) -> list[str]:

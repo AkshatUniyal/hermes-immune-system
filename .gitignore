@@ -17,10 +17,12 @@ __pycache__/
 venv/
 env/
 ENV/
+.python-version
 
 # Local environment files
 .env
 .env.*
+!.env.example
 !sandbox/repo/.env.example
 
 # Streamlit/local state
